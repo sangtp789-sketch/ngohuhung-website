@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Công ty Ngô Hy | KTS Ngô Hữu Hùng - Tư vấn thiết kế & xây dựng</title>
+  <meta name="description" content="Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy do KTS Ngô Hữu Hùng phụ trách, chuyên tư vấn thiết kế kiến trúc, nội thất, công trình dân dụng, công cộng và thi công xây dựng tại Lâm Đồng, Bình Thuận." />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: Arial, Helvetica, sans-serif; color: #1d2430; line-height: 1.65; background: #f5f1ea; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; display: block; }
+    .container { width: min(1180px, 92%); margin: auto; }
+    .topbar { background: #111827; color: #d6dbe5; font-size: 14px; padding: 8px 0; }
+    .topbar .container { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    header { background: rgba(255,255,255,.96); position: sticky; top: 0; z-index: 20; box-shadow: 0 2px 22px rgba(0,0,0,.06); backdrop-filter: blur(12px); }
+    .nav { display: flex; justify-content: space-between; align-items: center; padding: 16px 0; gap: 24px; position: relative; }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand-mark { width: 48px; height: 48px; border-radius: 12px; background: #8b5a2b; color: #fff; display: grid; place-items: center; font-weight: 900; letter-spacing: 1px; flex: 0 0 auto; }
+    .brand strong { display: block; font-size: 18px; color: #1d2430; line-height: 1.15; }
+    .brand span { display: block; font-size: 12px; color: #8b5a2b; text-transform: uppercase; letter-spacing: .9px; font-weight: 700; }
+    .menu { display: flex; gap: 22px; font-size: 15px; align-items: center; }
+    .menu a:hover { color: #8b5a2b; }
+    .mobile-toggle { display: none; }
+    .hamburger { display: none; width: 42px; height: 42px; border-radius: 12px; border: 1px solid #e5d6c5; align-items: center; justify-content: center; cursor: pointer; background: #fff; }
+    .hamburger span, .hamburger span:before, .hamburger span:after { content: ''; display: block; width: 20px; height: 2px; background: #1d2430; position: relative; transition: .2s; }
+    .hamburger span:before { position: absolute; top: -7px; }
+    .hamburger span:after { position: absolute; top: 7px; }
+    .btn { background: #8b5a2b; color: #fff; padding: 12px 20px; border-radius: 999px; display: inline-block; font-weight: 700; border: 1px solid #8b5a2b; transition: .2s; }
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 12px 28px rgba(139,90,43,.22); }
+    .btn.light { background: #fff; color: #8b5a2b; border-color: #d8c3ac; }
+    .hero { padding: 90px 0 76px; background: linear-gradient(120deg, rgba(17,24,39,.92), rgba(82,52,26,.74)), url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=1600&auto=format&fit=crop'); background-size: cover; background-position: center; color: #fff; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 52px; align-items: center; }
+    .eyebrow { color: #f2c894; font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: 1.6px; margin-bottom: 14px; }
+    h1 { font-size: clamp(38px, 5.2vw, 66px); line-height: 1.08; margin-bottom: 24px; letter-spacing: -1.6px; }
+    h2 { font-size: clamp(28px, 4vw, 44px); line-height: 1.18; margin-bottom: 18px; letter-spacing: -.8px; }
+    h3 { font-size: 22px; margin-bottom: 10px; }
+    .lead { font-size: 18px; color: rgba(255,255,255,.86); margin-bottom: 30px; max-width: 680px; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+    .hero-panel { background: rgba(255,255,255,.95); color: #1d2430; border-radius: 28px; padding: 30px; box-shadow: 0 28px 80px rgba(0,0,0,.24); }
+    .panel-title { font-size: 15px; text-transform: uppercase; letter-spacing: 1.2px; color: #8b5a2b; font-weight: 800; margin-bottom: 16px; }
+    .profile-list { display: grid; gap: 14px; }
+    .profile-list div { padding: 14px 16px; background: #f7f3ed; border-radius: 16px; border-left: 4px solid #8b5a2b; }
+    .profile-list strong { display: block; color: #111827; }
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; margin-top: 40px; }
+    .stat { background: rgba(255,255,255,.1); padding: 22px; border-radius: 18px; border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(8px); }
+    .stat strong { display: block; font-size: 30px; color: #f2c894; }
+    section { padding: 76px 0; }
+    .section-head { display: flex; justify-content: space-between; gap: 32px; align-items: end; margin-bottom: 36px; }
+    .label { color: #8b5a2b; font-weight: 800; text-transform: uppercase; font-size: 13px; letter-spacing: 1.5px; margin-bottom: 12px; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card { background: #fff; border-radius: 24px; padding: 28px; box-shadow: 0 14px 36px rgba(0,0,0,.055); border: 1px solid rgba(139,90,43,.08); }
+    .card .icon { width: 52px; height: 52px; border-radius: 16px; background: #efe1d2; display: grid; place-items: center; margin-bottom: 18px; font-size: 24px; color: #8b5a2b; }
+    .card p { color: #5f6673; }
+    .about { background: #fff; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center; }
+    .portrait { min-height: 520px; border-radius: 30px; background-image: linear-gradient(rgba(0,0,0,.08), rgba(0,0,0,.18)), url('https://images.unsplash.com/photo-1503387762-592deb58ef4e?q=80&w=1200&auto=format&fit=crop'); background-size: cover; background-position: center; box-shadow: 0 24px 60px rgba(0,0,0,.1); }
+    .checklist { margin-top: 24px; display: grid; gap: 12px; }
+    .check { background: #f7f3ed; padding: 14px 16px; border-radius: 14px; color: #3b4250; }
+    .capability { background: #111827; color: #fff; }
+    .capability-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .cap-box { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); padding: 28px; border-radius: 24px; }
+    .cap-box h3 { color: #f2c894; }
+    .cap-box ul { margin-left: 20px; color: #e6e9ef; }
+    .projects { background: #f5f1ea; }
+    .project-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+    .project { border-radius: 26px; overflow: hidden; background: #fff; box-shadow: 0 14px 36px rgba(0,0,0,.06); }
+    .project img { height: 230px; width: 100%; object-fit: cover; }
+    .project-body { padding: 24px; }
+    .project-meta { display: grid; gap: 8px; margin-top: 14px; color: #5f6673; font-size: 14px; }
+    .process-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; counter-reset: step; }
+    .step { background: #fff; border-radius: 22px; padding: 26px; box-shadow: 0 14px 36px rgba(0,0,0,.05); position: relative; }
+    .step:before { counter-increment: step; content: '0' counter(step); display: inline-grid; place-items: center; width: 42px; height: 42px; border-radius: 50%; background: #8b5a2b; color: #fff; font-weight: 900; margin-bottom: 18px; }
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .blog { background: #fff; border-radius: 24px; overflow: hidden; box-shadow: 0 12px 30px rgba(0,0,0,.05); }
+    .blog img { height: 190px; object-fit: cover; width: 100%; }
+    .blog-body { padding: 22px; }
+    .blog small { color: #8b5a2b; font-weight: 800; }
+    .contact-wrap { display: grid; grid-template-columns: 1fr .9fr; gap: 28px; align-items: stretch; }
+    .cta { background: #111827; color: #fff; border-radius: 32px; padding: 44px; }
+    .cta p { color: #d9d0c7; max-width: 680px; margin-bottom: 22px; }
+    .contact-card { background: #fff; border-radius: 32px; padding: 34px; box-shadow: 0 14px 36px rgba(0,0,0,.06); }
+    .contact-card div { padding: 14px 0; border-bottom: 1px solid #eee4da; }
+    .contact-card div:last-child { border-bottom: none; }
+    .contact-card strong { display: block; color: #8b5a2b; }
+    footer { padding: 40px 0 92px; background: #fff; color: #555; }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr; gap: 28px; }
+    .footer-grid strong { color: #111827; }
+    .mobile-cta-bar { display: none; }
+    .floating-actions { position: fixed; right: 18px; bottom: 22px; display: grid; gap: 10px; z-index: 30; }
+    .floating-actions a { width: 50px; height: 50px; border-radius: 50%; display: grid; place-items: center; color: #fff; font-weight: 900; box-shadow: 0 12px 30px rgba(0,0,0,.22); }
+    .float-phone { background: #8b5a2b; }
+    .float-mail { background: #111827; }
+
+    @media (max-width: 920px) {
+      .container { width: min(100% - 32px, 720px); }
+      .topbar { font-size: 12px; }
+      .topbar .container { flex-direction: column; text-align: center; gap: 4px; }
+      .nav { padding: 12px 0; gap: 12px; }
+      .brand { gap: 10px; min-width: 0; }
+      .brand-mark { width: 42px; height: 42px; border-radius: 11px; font-size: 14px; }
+      .brand strong { font-size: 15px; line-height: 1.1; }
+      .brand span { font-size: 10px; letter-spacing: .5px; }
+      .nav > .btn { display: none; }
+      .hamburger { display: flex; }
+      .menu { display: none; position: absolute; top: calc(100% + 8px); left: 0; right: 0; background: #fff; padding: 14px; border-radius: 18px; box-shadow: 0 20px 50px rgba(0,0,0,.14); border: 1px solid #efe4d8; }
+      .menu a { display: block; padding: 12px 14px; border-radius: 12px; font-weight: 700; }
+      .menu a:hover { background: #f7f3ed; }
+      .mobile-toggle:checked ~ .menu { display: grid; gap: 2px; }
+      .mobile-toggle:checked + .hamburger span { background: transparent; }
+      .mobile-toggle:checked + .hamburger span:before { top: 0; transform: rotate(45deg); }
+      .mobile-toggle:checked + .hamburger span:after { top: 0; transform: rotate(-45deg); }
+      .hero { padding: 46px 0 38px; background-position: center; }
+      .hero-grid, .about-grid, .capability-grid, .contact-wrap, .footer-grid { grid-template-columns: 1fr; gap: 24px; }
+      .cards, .project-grid, .blog-grid, .process-grid, .stats { grid-template-columns: 1fr; gap: 16px; }
+      .section-head { display: block; margin-bottom: 24px; }
+      section { padding: 52px 0; }
+      h1 { font-size: 32px; letter-spacing: -.8px; line-height: 1.15; margin-bottom: 18px; }
+      h2 { font-size: 26px; letter-spacing: -.4px; }
+      h3 { font-size: 20px; }
+      .lead { font-size: 16px; margin-bottom: 22px; }
+      .hero-actions { display: grid; grid-template-columns: 1fr; }
+      .hero-actions .btn { text-align: center; width: 100%; }
+      .hero-panel, .card, .cap-box, .step, .contact-card { border-radius: 20px; padding: 22px; }
+      .stats { margin-top: 24px; }
+      .stat { padding: 18px; }
+      .stat strong { font-size: 26px; }
+      .portrait { min-height: 300px; border-radius: 22px; }
+      .project img, .blog img { height: 210px; }
+      .cta { padding: 26px; border-radius: 24px; }
+      .cta .btn { width: 100%; text-align: center; }
+      footer { padding-bottom: 96px; }
+      .floating-actions { display: none; }
+      .mobile-cta-bar { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; position: fixed; left: 0; right: 0; bottom: 0; z-index: 40; padding: 10px 14px; background: rgba(255,255,255,.96); box-shadow: 0 -8px 28px rgba(0,0,0,.12); backdrop-filter: blur(10px); }
+      .mobile-cta-bar a { text-align: center; padding: 12px 10px; border-radius: 999px; font-weight: 800; color: #fff; }
+      .mobile-cta-bar .call { background: #8b5a2b; }
+      .mobile-cta-bar .mail { background: #111827; }
+    }
+
+    @media (max-width: 480px) {
+      .container { width: min(100% - 24px, 440px); }
+      .brand strong { font-size: 14px; }
+      .brand span { font-size: 9px; }
+      .eyebrow, .label { font-size: 11px; letter-spacing: 1.1px; }
+      h1 { font-size: 28px; }
+      h2 { font-size: 23px; }
+      .hero-panel, .card, .cap-box, .step, .project-body, .blog-body, .contact-card { padding: 18px; }
+      .profile-list div { padding: 12px 14px; }
+      .cap-box ul { margin-left: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="container">
+      <span>CÔNG TY TNHH TƯ VẤN THIẾT KẾ - XÂY DỰNG NGÔ HY</span>
+      <span>Hotline/Zalo: 0918 370 017 | Email: ktsngohuuhung@gmail.com</span>
+    </div>
+  </div>
+
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#home" aria-label="Trang chủ Công ty Ngô Hy">
+        <div class="brand-mark">NH</div>
+        <div>
+          <strong>NGÔ HY DESIGN & BUILD</strong>
+          <span>KTS Ngô Hữu Hùng</span>
+          <span style="font-size:11px;color:#9b6840;letter-spacing:.8px;">CEO & Architecture Design</span>
+        </div>
+      </a>
+      <input class="mobile-toggle" id="mobile-menu" type="checkbox" aria-label="Mở menu di động" />
+      <label class="hamburger" for="mobile-menu"><span></span></label>
+      <nav class="menu">
+        <a href="#about">Giới thiệu</a>
+        <a href="#services">Lĩnh vực</a>
+        <a href="#capability">Năng lực</a>
+        <a href="#projects">Dự án</a>
+        <a href="#process">Quy trình</a>
+        <a href="#contact">Liên hệ</a>
+      </nav>
+      <a class="btn" href="tel:0918370017">Gọi tư vấn</a>
+    </div>
+  </header>
+
+  <main id="home">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">Tư vấn thiết kế • Kiến trúc • Xây dựng</div>
+          <h1>Công ty Ngô Hy – Tư vấn thiết kế & xây dựng công trình chuyên nghiệp</h1>
+          <p class="lead">Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy do KTS Ngô Hữu Hùng phụ trách, định hướng xây dựng hình ảnh đơn vị tư vấn kiến trúc chuyên nghiệp, chỉn chu và đủ năng lực phục vụ công trình dân dụng, công cộng, cải tạo và nội thất.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#projects">Xem dự án tiêu biểu</a>
+            <a class="btn light" href="#capability">Xem hồ sơ năng lực</a>
+          </div>
+          <div class="stats">
+            <div class="stat"><strong>12+</strong><span>Năm kinh nghiệm chuyên môn</span></div>
+            <div class="stat"><strong>80+</strong><span>Dự án tư vấn & thiết kế</span></div>
+            <div class="stat"><strong>06</strong><span>Nhóm dịch vụ kiến trúc</span></div>
+            <div class="stat"><strong>02</strong><span>Khu vực trọng điểm: Lâm Đồng, Bình Thuận</span></div>
+          </div>
+        </div>
+        <aside class="hero-panel">
+          <div class="panel-title">Thông tin đơn vị</div>
+          <div class="profile-list">
+            <div><strong>Chức danh</strong>CEO & Architecture Design</div>
+            <div><strong>Tên công ty</strong>Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy</div>
+            <div><strong>Kiến trúc sư phụ trách</strong>KTS Ngô Hữu Hùng</div>
+            <div><strong>Định hướng chuyên môn</strong>Tư vấn thiết kế, triển khai hồ sơ, thi công và cải tạo công trình</div>
+            <div><strong>Liên hệ</strong>0918 370 017 • ktsngohuuhung@gmail.com</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head"><div><div class="label">Lĩnh vực hoạt động</div><h2>Giải pháp toàn diện từ ý tưởng kiến trúc đến triển khai xây dựng</h2></div></div>
+        <div class="cards">
+          <div class="card"><div class="icon">⌂</div><h3>Thiết kế nhà phố</h3><p>Tối ưu mặt bằng, công năng, thông gió, ánh sáng và hình thức kiến trúc phù hợp với gia đình Việt.</p></div>
+          <div class="card"><div class="icon">◇</div><h3>Thiết kế biệt thự</h3><p>Tư vấn phong cách, quy hoạch không gian, cảnh quan và trải nghiệm sống cao cấp cho từng chủ đầu tư.</p></div>
+          <div class="card"><div class="icon">▣</div><h3>Thiết kế nội thất</h3><p>Triển khai giải pháp nội thất đồng bộ với kiến trúc, đảm bảo thẩm mỹ, vật liệu và tiện ích sử dụng.</p></div>
+          <div class="card"><div class="icon">▤</div><h3>Công trình công cộng</h3><p>Định hướng thiết kế chỉn chu, mạch lạc, phù hợp các công trình có yêu cầu về công năng và tính đại diện.</p></div>
+          <div class="card"><div class="icon">◫</div><h3>Showroom, văn phòng, khách sạn</h3><p>Thiết kế không gian thương mại, nhận diện thương hiệu, mặt tiền và trải nghiệm khách hàng.</p></div>
+          <div class="card"><div class="icon">✦</div><h3>Cải tạo & thi công xây dựng</h3><p>Khảo sát hiện trạng, đề xuất phương án cải tạo, hoàn thiện hồ sơ và tổ chức thi công theo nhu cầu thực tế.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="container about-grid">
+        <div class="portrait" role="img" aria-label="Hình ảnh kiến trúc và công trình xây dựng"></div>
+        <div><div class="label">Giới thiệu</div><h2>KTS Ngô Hữu Hùng và định hướng phát triển Công ty Ngô Hy</h2><p>KTS Ngô Hữu Hùng là người phụ trách chuyên môn của Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy. Website được xây dựng như một hồ sơ năng lực trực tuyến, thể hiện rõ chuyên môn kiến trúc, kinh nghiệm tư vấn thiết kế và năng lực đồng hành cùng chủ đầu tư trong nhiều loại hình công trình.</p><p>Định hướng của Ngô Hy là tạo ra giải pháp thiết kế có tính thực tế, bền vững và phù hợp với điều kiện sử dụng. Mỗi công trình cần được tiếp cận bằng tư duy tổng thể: công năng, kỹ thuật, thẩm mỹ, chi phí và khả năng thi công.</p><div class="checklist"><div class="check">✓ Hồ sơ giới thiệu phù hợp khách hàng cá nhân, doanh nghiệp và chủ đầu tư</div><div class="check">✓ Tập trung vào thiết kế kiến trúc, nội thất, cải tạo và thi công xây dựng</div><div class="check">✓ Định vị thương hiệu chuyên nghiệp tại Lâm Đồng, Bình Thuận và khu vực lân cận</div></div></div>
+      </div>
+    </section>
+
+    <section id="capability" class="capability">
+      <div class="container">
+        <div class="section-head"><div><div class="eyebrow">Hồ sơ năng lực</div><h2>Năng lực tư vấn thiết kế & triển khai công trình</h2></div></div>
+        <div class="capability-grid">
+          <div class="cap-box"><h3>Năng lực chuyên môn</h3><ul><li>Tư vấn ý tưởng thiết kế và định hướng phong cách kiến trúc.</li><li>Thiết kế phương án mặt bằng, mặt đứng, phối cảnh công trình.</li><li>Triển khai hồ sơ thiết kế cơ sở và hồ sơ kỹ thuật thi công.</li><li>Tư vấn vật liệu, giải pháp hoàn thiện và kiểm soát tính khả thi.</li></ul></div>
+          <div class="cap-box"><h3>Loại hình công trình</h3><ul><li>Nhà ở riêng lẻ, nhà phố, biệt thự, nhà vườn.</li><li>Công trình công cộng, trụ sở, văn phòng, showroom.</li><li>Không gian nội thất dân dụng và thương mại.</li><li>Cải tạo, nâng cấp, mở rộng công trình hiện hữu.</li></ul></div>
+          <div class="cap-box"><h3>Giá trị cam kết</h3><ul><li>Thiết kế rõ ràng, thực tế, có khả năng triển khai thi công.</li><li>Trao đổi minh bạch về nhu cầu, chi phí và phạm vi công việc.</li><li>Ưu tiên tính bền vững, công năng và trải nghiệm sử dụng.</li><li>Đồng hành trong quá trình hoàn thiện ý tưởng và hồ sơ.</li></ul></div>
+          <div class="cap-box"><h3>Thông tin pháp nhân</h3><ul><li>Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy.</li><li>KTS phụ trách: Ngô Hữu Hùng.</li><li>Địa chỉ: B2, khu tập thể công an, khu phố 11, phường Phú Thuỷ, tỉnh Lâm Đồng.</li><li>Email: ktsngohuuhung@gmail.com.</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="projects">
+      <div class="container">
+        <div class="section-head"><div><div class="label">Dự án tiêu biểu</div><h2>Danh mục công trình nên trình bày theo phong cách hồ sơ năng lực</h2></div></div>
+        <div class="project-grid">
+          <article class="project"><img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=1200&auto=format&fit=crop" alt="Dự án thiết kế nhà phố bởi KTS Ngô Hữu Hùng" /><div class="project-body"><h3>Nhà phố hiện đại</h3><p>Phương án thiết kế tối ưu ánh sáng, thông gió và công năng sinh hoạt gia đình.</p><div class="project-meta"><span><strong>Hạng mục:</strong> Thiết kế kiến trúc</span><span><strong>Loại công trình:</strong> Nhà ở dân dụng</span><span><strong>Khu vực:</strong> Lâm Đồng / Bình Thuận</span></div></div></article>
+          <article class="project"><img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=1200&auto=format&fit=crop" alt="Dự án biệt thự sân vườn Ngô Hy Architect" /><div class="project-body"><h3>Biệt thự sân vườn</h3><p>Không gian sống kết hợp cảnh quan, khoảng xanh và trải nghiệm nghỉ dưỡng.</p><div class="project-meta"><span><strong>Hạng mục:</strong> Kiến trúc & cảnh quan</span><span><strong>Loại công trình:</strong> Biệt thự</span><span><strong>Định hướng:</strong> Bền vững, gần gũi thiên nhiên</span></div></div></article>
+          <article class="project"><img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&w=1200&auto=format&fit=crop" alt="Thiết kế văn phòng showroom khách sạn bởi Công ty Ngô Hy" /><div class="project-body"><h3>Văn phòng / Showroom</h3><p>Thiết kế không gian thương mại chuyên nghiệp, tạo điểm nhấn nhận diện và trải nghiệm khách hàng.</p><div class="project-meta"><span><strong>Hạng mục:</strong> Thiết kế nội thất</span><span><strong>Loại công trình:</strong> Thương mại</span><span><strong>Mục tiêu:</strong> Thẩm mỹ, công năng, thương hiệu</span></div></div></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="process"><div class="container"><div class="section-head"><div><div class="label">Quy trình làm việc</div><h2>Rõ ràng từ khảo sát đến hoàn thiện hồ sơ</h2></div></div><div class="process-grid"><div class="step"><h3>Khảo sát & tiếp nhận yêu cầu</h3><p>Ghi nhận hiện trạng, nhu cầu sử dụng, ngân sách, pháp lý và định hướng phong cách.</p></div><div class="step"><h3>Đề xuất phương án</h3><p>Lên ý tưởng mặt bằng, phối cảnh sơ bộ và giải pháp tổ chức không gian.</p></div><div class="step"><h3>Triển khai hồ sơ</h3><p>Hoàn thiện bản vẽ kiến trúc, nội thất, kỹ thuật và các hạng mục liên quan.</p></div><div class="step"><h3>Đồng hành thi công</h3><p>Hỗ trợ giải thích hồ sơ, tư vấn vật liệu và kiểm soát tính thống nhất trong quá trình thực hiện.</p></div></div></div></section>
+
+    <section id="blog"><div class="container"><div class="section-head"><div><div class="label">Tin tức & góc chuyên môn</div><h2>Xây dựng uy tín chuyên gia thông qua nội dung kiến trúc</h2></div></div><div class="blog-grid"><article class="blog"><img src="https://images.unsplash.com/photo-1494526585095-c41746248156?q=80&w=1200&auto=format&fit=crop" alt="Kinh nghiệm thiết kế nhà phố" /><div class="blog-body"><small>Tư vấn thiết kế</small><h3>Kinh nghiệm thiết kế nhà phố tối ưu công năng</h3><p>Cách tổ chức không gian sống hợp lý cho gia đình nhiều thế hệ.</p></div></article><article class="blog"><img src="https://images.unsplash.com/photo-1600607687920-4e2a09cf159d?q=80&w=1200&auto=format&fit=crop" alt="Chi phí thiết kế xây dựng" /><div class="blog-body"><small>Hồ sơ thiết kế</small><h3>Một bộ hồ sơ thiết kế xây dựng gồm những gì?</h3><p>Giải thích các hạng mục bản vẽ cần có trước khi thi công.</p></div></article><article class="blog"><img src="https://images.unsplash.com/photo-1600566753086-00f18fb6b3ea?q=80&w=1200&auto=format&fit=crop" alt="Thuê kiến trúc sư thiết kế" /><div class="blog-body"><small>Góc chuyên gia</small><h3>Khi nào chủ đầu tư nên thuê kiến trúc sư?</h3><p>Những trường hợp cần tư vấn chuyên môn để tránh phát sinh chi phí.</p></div></article></div></div></section>
+
+    <section id="contact"><div class="container contact-wrap"><div class="cta"><div class="eyebrow">Liên hệ tư vấn</div><h2>Cần tư vấn thiết kế, cải tạo hoặc hồ sơ công trình?</h2><p>Liên hệ Công ty Ngô Hy để trao đổi nhu cầu, phạm vi công việc và phương án triển khai phù hợp cho công trình của bạn.</p><a class="btn light" href="tel:0918370017">Gọi 0918 370 017</a></div><div class="contact-card"><h3>Thông tin liên hệ</h3><div><strong>Công ty</strong>Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy</div><div><strong>Kiến trúc sư phụ trách</strong>KTS Ngô Hữu Hùng</div><div><strong>Số điện thoại / Zalo</strong><a href="tel:0918370017">0918 370 017</a></div><div><strong>Email</strong><a href="mailto:ktsngohuuhung@gmail.com">ktsngohuuhung@gmail.com</a></div><div><strong>Địa chỉ</strong>B2, khu tập thể công an, khu phố 11, phường Phú Thuỷ, tỉnh Lâm Đồng, Việt Nam</div></div></div></section>
+  </main>
+
+  <footer><div class="container footer-grid"><div><strong>CÔNG TY TNHH TƯ VẤN THIẾT KẾ - XÂY DỰNG NGÔ HY</strong><p>Website giới thiệu năng lực tư vấn thiết kế, kiến trúc, nội thất, cải tạo và thi công xây dựng do KTS Ngô Hữu Hùng phụ trách.</p></div><div><p><strong>Địa chỉ:</strong> B2, khu tập thể công an, khu phố 11, phường Phú Thuỷ, tỉnh Lâm Đồng, Việt Nam</p><p><strong>Hotline:</strong> 0918 370 017</p><p><strong>Email:</strong> ktsngohuuhung@gmail.com</p></div></div></footer>
+
+  <div class="floating-actions"><a class="float-phone" href="tel:0918370017">☎</a><a class="float-mail" href="mailto:ktsngohuuhung@gmail.com">✉</a></div>
+  <div class="mobile-cta-bar"><a class="call" href="tel:0918370017">Gọi ngay</a><a class="mail" href="mailto:ktsngohuuhung@gmail.com">Gửi email</a></div>
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Công ty TNHH Tư Vấn Thiết Kế - Xây Dựng Ngô Hy","alternateName":"Ngô Hy Design & Build","url":"https://example.com","email":"ktsngohuuhung@gmail.com","telephone":"0918370017","address":{"@type":"PostalAddress","streetAddress":"B2, khu tập thể công an, khu phố 11, phường Phú Thuỷ","addressRegion":"Lâm Đồng","addressCountry":"VN"},"founder":{"@type":"Person","name":"Ngô Hữu Hùng","jobTitle":"CEO & Kiến trúc sư trưởng","email":"ktsngohuuhung@gmail.com","telephone":"0918370017","knowsAbout":["Thiết kế kiến trúc","Thiết kế nhà phố","Thiết kế biệt thự","Thiết kế nội thất","Tư vấn xây dựng","Công trình công cộng"]},"areaServed":["Lâm Đồng","Bình Thuận","Việt Nam"],"sameAs":["http://kientrucbinhthuan.vn/"]}
+  </script>
+</body>
+</html>
